@@ -1,0 +1,7 @@
+Protocol 2
+
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+
+PermitRootLogin no
+AllowUsers chris
