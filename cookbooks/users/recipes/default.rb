@@ -5,6 +5,7 @@ end
 
 execute "unlock user" do
   command "usermod -p '*' chris"
+  only_if { `cat /etc/shadow | grep chris`.include?("!") }
 end
 
 group "sudo" do
@@ -32,8 +33,9 @@ end
 
 cookbook_file "/etc/ssh/sshd_config" do
   mode "0644"
+  notifies :restart, "service[ssh]", :immediately
 end
 
 service "ssh" do
-  action :restart
+  action :nothing
 end
