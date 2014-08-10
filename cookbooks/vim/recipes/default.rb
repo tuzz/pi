@@ -1,3 +1,6 @@
+package "ncurses-dev"
+package "build-essential"
+
 remote_file "/tmp/vim.tar.gz" do
   source "https://github.com/b4winckler/vim/archive/v7-4-383.tar.gz"
   not_if { File.exists?("/tmp/vim.tar.gz") }
@@ -15,6 +18,11 @@ bash "install vim" do
   cwd "/tmp/vim-7-4-383"
   code "./configure -q --disable-gui && make -s && make -s install"
   not_if { File.exists?("/usr/local/bin/vim") }
+end
+
+link "/usr/local/bin/vi" do
+  group "staff"
+  to "/usr/local/bin/vim"
 end
 
 git "/home/chris/.vim" do
