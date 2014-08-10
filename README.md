@@ -8,26 +8,13 @@ Install the latest Raspbian image by following [these instructions](http://www.r
 
 Insert your SD card, connect to ethernet and power up.
 
-After a few seconds, you should be able to SSH to your pi.
+After a few seconds, run the setup script.
 
 ```bash
-ssh pi@raspberrypi
+ssh pi@raspberrypi 'bash <(curl -L raw.github.com/tuzz/pi/master/setup.sh)'
 # raspberry
 ```
 
-Next, let's install chef.
+This will take a long time, so grab a snickers.
 
-```bash
-sudo apt-get update
-sudo apt-get install -y chef
-```
-
-You will be prompted for a chef server. Just hit enter.
-
-Finally, clone this repository and run chef.
-
-```bash
-sudo rm -rf /etc/chef
-sudo git clone https://github.com/tuzz/pi /etc/chef
-sudo chef-solo
-```
+Your pi will reboot once it's done.
