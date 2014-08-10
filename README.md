@@ -15,15 +15,7 @@ ssh pi@raspberrypi
 # raspberry
 ```
 
-Next, let's configure the Pi.
-
-```bash
-sudo raspi-config
-```
-
-Expand the filesystem to fill your SD card and reboot.
-
-Reconnect, then install chef.
+Next, let's install chef.
 
 ```bash
 sudo apt-get update

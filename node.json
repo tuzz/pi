@@ -1,6 +1,3 @@
 {
-  "run_list": [
-    "recipe[users]",
-    "recipe[vim]"
-  ]
+  "run_list": ["expand", "users", "vim"]
 }
