@@ -2,6 +2,7 @@
   "run_list": [
     "clean",
     "expand",
+    "network",
     "users",
     "vim"
   ]
