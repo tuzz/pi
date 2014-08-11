@@ -1,3 +1,8 @@
 {
-  "run_list": ["expand", "users", "vim"]
+  "run_list": [
+    "clean",
+    "expand",
+    "users",
+    "vim"
+  ]
 }
