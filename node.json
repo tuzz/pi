@@ -4,6 +4,7 @@
     "expand",
     "network",
     "users",
+    "drive",
     "vim"
   ]
 }
