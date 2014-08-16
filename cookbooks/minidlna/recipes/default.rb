@@ -4,9 +4,10 @@ directory "/media/hdd/.database"
 
 cookbook_file "/etc/minidlna.conf" do
   mode "0644"
-  notifies :"force-reload", "service[minidlna]", :immediately
+  notifies :run, "execute[force-reload minidlna]", :immediately
 end
 
-service "minidlna" do
+execute "force-reload minidlna" do
+  command "service minidlna force-reload"
   action :nothing
 end
