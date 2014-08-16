@@ -47,3 +47,13 @@ end
 link "/root/.vim" do
   to "/home/chris/.vim"
 end
+
+execute "set default editor" do
+  command "echo 'export EDITOR=vim' >> /etc/profile"
+  notifies :run, "execute[reboot]", :delayed
+  not_if { File.read("/etc/profile").include?("EDITOR") }
+end
+
+execute "reboot" do
+  action :nothing
+end
