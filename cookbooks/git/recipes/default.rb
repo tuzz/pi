@@ -1,10 +1,9 @@
-execute "configure git" do
-  command <<-CMD
-    git config --global user.name "Chris Patuzzo"
-    git config --global user.email chris@patuzzo.co.uk
-    git config --global color.ui true
-    git config --global core.editor vim
-  CMD
+cookbook_file "/home/chris/.gitconfig" do
+  mode "0644"
+  owner "chris"
+  group "chris"
+end
 
-  not_if { `git config --global user.email`.include?("chris") }
+link "/root/.gitconfig" do
+  to "/home/chris/.gitconfig"
 end
