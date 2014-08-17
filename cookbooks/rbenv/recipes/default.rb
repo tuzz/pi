@@ -1,3 +1,13 @@
+package "autoconf"
+package "bison"
+package "build-essential"
+package "libssl-dev"
+package "libyaml-dev"
+package "libreadline6"
+package "libreadline6-dev"
+package "zlib1g"
+package "zlib1g-dev"
+
 git "/usr/local/rbenv" do
   repository "https://github.com/sstephenson/rbenv"
   depth 1
